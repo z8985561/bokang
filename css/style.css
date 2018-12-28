@@ -48,6 +48,9 @@ textarea {
   margin-left: auto;
   margin-right: auto;
 }
+.mb-30 {
+  margin-bottom: 30px;
+}
 .mb-50 {
   margin-bottom: 50px;
 }
@@ -96,6 +99,9 @@ textarea {
   height: 3px;
   background-color: #876568;
 }
+#base-header .navbar-collapse {
+  background-color: #fff;
+}
 .base-title {
   margin-bottom: 40px;
   padding-top: 40px;
@@ -105,12 +111,27 @@ textarea {
   font-weight: 700;
 }
 .base-title p {
+  display: inline-block;
+  position: relative;
   font-size: 16px;
   color: #bdb1b1 !important;
+}
+.base-title p::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: -3px;
+  width: 31px;
+  height: 31px;
+  border: 1.5px solid #6e5455;
+  border-radius: 50%;
 }
 .index-wrap p {
   font-size: 16px;
   color: #999;
+}
+.index-wrap h4 {
+  color: #333;
 }
 .index-wrap .index-news {
   margin-bottom: 20px;
@@ -227,6 +248,158 @@ textarea {
 .base-footer .mb-footer .f-nav a {
   color: #d1bdbe;
 }
+.mask-box {
+  position: relative;
+  overflow: hidden;
+}
+.mask-box .mask {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  padding: 0 40px;
+  transition: top .5s;
+}
+.mask-box .mask p {
+  color: #fff;
+}
+.mask-box .mask a {
+  display: inline-block;
+  width: 94px;
+  height: 24px;
+  line-height: 24px;
+  border: 1px solid #fff;
+  color: #fff;
+  text-align: center;
+  border-radius: 12px;
+}
+.mask-box:hover .mask {
+  top: 0;
+}
+.product-wrap h3 {
+  color: #876568;
+}
+.product-wrap .bar {
+  display: inline-block;
+  margin: 20px 0;
+  width: 55px;
+  height: 2px;
+  background-color: #876568;
+}
+.lecturer {
+  height: 670px;
+}
+.lecturer h4 {
+  color: #876568;
+}
+.lecturer p {
+  padding: 0 80px;
+}
+.lecturer .swiper-slide {
+  background-size: cover;
+  background-position: center top;
+}
+.lecturer .gallery-top {
+  height: 70%;
+  width: 100%;
+}
+.lecturer .gallery-thumbs {
+  height: 30%;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+.lecturer .gallery-thumbs .swiper-slide {
+  height: 100%;
+  opacity: 0.4;
+}
+.lecturer .gallery-thumbs .swiper-slide-thumb-active {
+  opacity: 1;
+}
+.paging {
+  display: flex;
+  justify-content: center;
+}
+.paging a {
+  margin: 0 5px;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  color: #999;
+  border-radius: 3px;
+  font-size: 14px;
+  text-align: center;
+}
+.paging a.on {
+  background-color: #876568;
+  color: #fff;
+}
+.join-form input,
+.join-form textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  background-color: #fbfbfb;
+  border: none;
+  border-left: 1px solid #dfdfdf;
+  font-size: 16px;
+}
+.join-form input::-webkit-input-placeholder,
+.join-form textarea::-webkit-input-placeholder {
+  color: #b9b9b9;
+}
+.join-form input {
+  height: 50px;
+}
+.join-form textarea {
+  height: 170px;
+  resize: unset;
+}
+.join-form select {
+  height: 50px;
+  padding-left: 20px;
+  margin-right: 20px;
+  background-color: #fbfbfb;
+  border: none;
+  border-left: 1px solid #dfdfdf;
+  font-size: 16px;
+}
+#join-btn {
+  width: 380px;
+  height: 50px;
+  background-color: #876568;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 3px;
+}
+.base-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+.base-banner h2 {
+  width: 315px;
+  height: 70px;
+  line-height: 70px;
+  border: 3px solid #876568;
+  color: #876568;
+  text-align: center;
+}
+.prev-next {
+  font-size: 16px;
+}
+.prev-next a {
+  color: #333;
+}
 @media (max-width: 768px) {
   body {
     padding-top: 61px;
@@ -251,8 +424,36 @@ textarea {
   .index-wrap .index-news .col-xs-9 {
     padding-left: 20px;
   }
+  .index-wrap .index-news h3 {
+    font-size: 18px;
+  }
+  .index-wrap .index-news h4 {
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+  .index-wrap .index-news p {
+    font-size: 13px;
+  }
   .base-footer {
     padding-top: 20px;
     height: 120px;
+  }
+  .lecturer p {
+    padding: 0 10px;
+  }
+  .lecturer .gallery-top {
+    height: 80%;
+  }
+  .lecturer .gallery-thumbs {
+    height: 20%;
+  }
+  #join-btn {
+    width: 100px;
+    height: 40px;
+    background-color: #876568;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 3px;
   }
 }

@@ -49,7 +49,9 @@ textarea {
   margin-right: auto;
 }
 
-
+.mb-30{
+  margin-bottom: 30px;
+}
 .mb-50{
   margin-bottom:50px;
 }
@@ -117,6 +119,9 @@ textarea {
       height: 3px;
       background-color: #876568;
     }
+    .navbar-collapse{
+      background-color: #fff;
+    }
 }
 
 // 首页公共标题
@@ -128,8 +133,20 @@ textarea {
     font-weight: 700;
   }
   p{
+    display: inline-block;
+    position: relative;
     font-size: 16px;
     color: #bdb1b1 !important;
+    &::after{
+      content: "";
+      position: absolute;
+      top: -8px;
+      left: -3px;
+      width: 31px;
+      height: 31px;
+      border: 1.5px solid #6e5455;
+      border-radius: 50%;
+    }
   }
 }
 
@@ -137,6 +154,9 @@ textarea {
   p{
     font-size: 16px;
     color: #999;
+  }
+  h4{
+    color: #333;
   }
   .index-news{
     margin-bottom: 20px;
@@ -260,6 +280,183 @@ textarea {
   }
 }
 
+//首页集团项目鼠标经过图片样式
+.mask-box{
+  position: relative;
+  overflow: hidden;
+  .mask{
+    position: absolute;
+    top:100%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,.5);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    padding: 0 40px;
+    transition: top .5s;
+    p{
+      color: #fff;
+    }
+    a{
+      display: inline-block;
+      width: 94px;
+      height: 24px;
+      line-height: 24px;
+      border: 1px solid #fff;
+      color: #fff;
+      text-align: center;
+      border-radius: 12px;
+    }
+  }
+  &:hover .mask{
+    top:0;
+  }
+}
+
+.product-wrap{
+  h3{
+    color: #876568;
+  }
+  .bar{
+    display:inline-block;
+    margin: 20px 0;
+    width: 55px;
+    height: 2px;
+    background-color: #876568;
+  }
+}
+
+.lecturer{
+  height: 670px;
+  h4{
+    color: #876568;
+  }
+  p{padding: 0 80px;}
+  .swiper-slide {
+    background-size: cover;
+    background-position: center top;
+  }
+  .gallery-top {
+    height: 70%;
+    width: 100%;
+  }
+  .gallery-thumbs {
+    height: 30%;
+    box-sizing: border-box;
+    padding: 10px 0;
+  }
+  .gallery-thumbs .swiper-slide {
+    height: 100%;
+    opacity: 0.4;
+  }
+  .gallery-thumbs .swiper-slide-thumb-active {
+    opacity: 1;
+  }
+}
+
+// 分页样式
+.paging{
+  display: flex;
+  justify-content: center;
+  a{
+    margin:0 5px;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #999;
+    border-radius: 3px;
+    font-size: 14px;
+    text-align: center;
+    &.on{
+      background-color: #876568;
+      color: #fff;
+    }
+  }
+}
+
+
+// 加盟样式
+.join-form{
+  input,textarea{
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    background-color: #fbfbfb;
+    border: none;
+    border-left: 1px solid #dfdfdf;
+    font-size: 16px;
+    &::-webkit-input-placeholder{
+      color: #b9b9b9;
+    }
+  }
+  input{
+    height: 50px;
+  }
+  textarea{
+    height: 170px;
+    resize: unset;
+  }
+  select{
+    height: 50px;
+    padding-left: 20px;
+    margin-right: 20px;
+    background-color: #fbfbfb;
+    border: none;
+    border-left: 1px solid #dfdfdf;
+    font-size: 16px;
+  }
+}
+#join-btn{
+  width: 380px;
+  height: 50px;
+  background-color: #876568;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 3px;
+}
+
+// 详情公共banner
+.base-banner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  h2{
+    width: 315px;
+    height: 70px;
+    line-height: 70px;
+    border:3px solid #876568;
+    color: #876568;
+    text-align: center;
+  }
+}
+
+// 上一篇下一篇样式
+.prev-next{
+  font-size: 16px;
+  a{
+    color: #333;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 //手机端样式
 @media (max-width:768px){
 body{
@@ -289,11 +486,46 @@ body{
 .index-wrap .index-news .col-xs-9 {
     padding-left: 20px;
 }
+.index-wrap .index-news{
+  h3{
+    font-size: 18px;
+  }
+  h4{
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+  p{
+    font-size: 13px;
+  }
+}
 
 // 公共底部
 .base-footer{
   padding-top: 20px;
   height: 120px;
+}
+
+//博康学院样式
+.lecturer{
+ p{
+   padding: 0 10px;
+ }
+  .gallery-top{
+    height: 80%;
+  }
+  .gallery-thumbs{
+   height: 20%;
+ }
+}
+
+#join-btn{
+  width: 100px;
+  height: 40px;
+  background-color: #876568;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 3px;
 }
 
 
